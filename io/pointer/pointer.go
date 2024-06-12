@@ -3,6 +3,7 @@
 package pointer
 
 import (
+	"gioui.org/internal/math"
 	"strings"
 	"time"
 
@@ -227,8 +228,8 @@ const (
 
 func (s ScrollRange) Union(s2 ScrollRange) ScrollRange {
 	return ScrollRange{
-		Min: min(s.Min, s2.Min),
-		Max: max(s.Max, s2.Max),
+		Min: math.Min(s.Min, s2.Min),
+		Max: math.Max(s.Max, s2.Max),
 	}
 }
 
